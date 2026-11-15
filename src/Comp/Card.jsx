@@ -7,7 +7,7 @@ import {
 import React, { useContext } from "react";
 import { Mycontext } from "./Mycontext";
 import axios from "axios";
-
+import API from "../api";
 const Card = ({
   el,
   height = 370,
@@ -36,7 +36,7 @@ const Card = ({
   const Cartadd = Cartdata?.some(
     (item) => item.id === el.id
   );
- const API = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
   // ADD TO CART
   async function addToCart(e) {
     e.preventDefault();

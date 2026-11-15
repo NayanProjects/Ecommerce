@@ -10,13 +10,13 @@ import Account from "./Comp/Account";
 import Cart from "./Comp/Cart";
 import Wishlist from "./Comp/Wishlist";
 import { Mycontext } from "./Comp/Mycontext";
-
+import API from "./api";
 const App = () => {
   const {
     setMaindata,
     Cartdata,
   } = useContext(Mycontext);
-const API = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
   // Load products
   useEffect(() => {
     async function getProducts() {

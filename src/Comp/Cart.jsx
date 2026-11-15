@@ -16,6 +16,7 @@ import {
   Truck,
 } from "lucide-react";
 import axios from "axios";
+import API from "../api";
 
 const Cart = () => {
   let {
@@ -43,7 +44,7 @@ const Cart = () => {
   const [orderId, setOrderId] = useState(null);
 
   const [loaded, setLoaded] = useState(false);
- const API = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
   console.log("NV:", nv);
 
   // ---------------------------------------

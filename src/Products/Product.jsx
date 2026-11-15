@@ -7,7 +7,7 @@ import axios from "axios";
 import { Mycontext } from "../Comp/Mycontext";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-
+import API from "../api";
 const Product = ({cartcount}) => {
   const [data, setData] = useState([]);
 
@@ -61,7 +61,7 @@ const Product = ({cartcount}) => {
       });
     }
   }, [location.state, navigate]);
-const API = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
   useEffect(() => {
     async function getdata() {
       try {
