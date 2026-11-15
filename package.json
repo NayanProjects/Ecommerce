@@ -3,11 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-     "build": "vite build",
-    "server": "json-server db.json"
-  },
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "server": "json-server db.json --host 0.0.0.0",
+ "start": "node start-server.js"
+},
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.3.3",
