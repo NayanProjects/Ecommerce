@@ -2,10 +2,9 @@
 import fs from "node:fs";
 import { spawn } from "node:child_process";
 
-const dbPath = "/var/data/db.json";
+const dbPath = process.env.DB_PATH || "./db.json";
 
-// Copy initial database only if it doesn't exist yet.
-if (!fs.existsSync(dbPath)) {
+if (process.env.DB_PATH && !fs.existsSync(dbPath)) {
   fs.copyFileSync("./db.json", dbPath);
 }
 
@@ -23,6 +22,11 @@ const server = spawn(
   ],
   { stdio: "inherit" }
 );
+
+server.on("error", (error) => {
+  console.error("Failed to start JSON Server:", error);
+  process.exit(1);
+});
 
 server.on("exit", (code) => {
   process.exit(code ?? 0);
