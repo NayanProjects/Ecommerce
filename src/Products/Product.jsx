@@ -61,11 +61,11 @@ const Product = ({cartcount}) => {
       });
     }
   }, [location.state, navigate]);
-
+const API = import.meta.env.VITE_API_URL || "http://localhost:3000";
   useEffect(() => {
     async function getdata() {
       try {
-        const res = await axios.get("http://localhost:3000/products");
+        const res = await axios.get(`${API}/products`);
         setData(res.data);
       } catch (error) {
         console.log(error);
