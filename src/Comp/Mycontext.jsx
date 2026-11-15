@@ -76,13 +76,13 @@ const ContextProvider = ({ children }) => {
   const [Wishlistdata, setWishlistdata] = useState([]);
   const [Cartdata, setCartdata] = useState([]);
   const [totalcartitems,setTotalcartitems]=useState(0);
-
+const API = import.meta.env.VITE_API_URL || "http://localhost:3000";
   // Load cart from db.json when application starts
   useEffect(() => {
     async function loadCart() {
       try {
         const response = await axios.get(
-          "http://localhost:3000/cart"
+          `${API}/cart`
         );
 
         // console.log("Cart loaded from db.json:", response.data);

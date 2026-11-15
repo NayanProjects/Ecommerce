@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 
 const Category = ({ cartcount }) => {
+ 
   let navigate = useNavigate();
   let { setCheckfoot, setCbedata, setCfedata, setDealdata } =
     useContext(Mycontext);
